@@ -2,10 +2,14 @@ package Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import Base.DriverManager;
 
-public class subscribeKSAEngPage {
+
+public class SubscribeKSAEngPage extends DriverManager {
+
     @FindBy(id = "country-name")
     WebElement countryName;
+
     @FindBy(id = "name-lite")
     WebElement liteSubType;
     @FindBy(id = "currency-lite")
@@ -13,16 +17,18 @@ public class subscribeKSAEngPage {
     @FindBy(xpath = "//*[@id=\"currency-lite\"]/i/text()[1]")
     WebElement currencyType;
 
-    String getCountryName(){
+    public String getCountryName(){
+        System.out.println(countryName.getText());
        return countryName.getText();
+
     }
-    Boolean isLiteSubShowing(){
+    public Boolean isLiteSubShowing(){
         return liteSubType.isDisplayed();
     }
-    String getLiteSubPrice(){
+    public String getLiteSubPrice(){
         return liteSubAmount.getText();
     }
-    String getCurrencyType(){
+    public String getCurrencyType(){
         return currencyType.getText();
     }
 
