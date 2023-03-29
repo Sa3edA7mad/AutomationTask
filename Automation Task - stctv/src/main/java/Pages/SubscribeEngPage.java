@@ -29,6 +29,11 @@ public class SubscribeEngPage extends DriverManager {
     WebElement KuwaitBtn;
     @FindBy(xpath = "//*[@id=\"bh\"]")
     WebElement BahrainBtn;
+    @FindBy(id = "translation-btn")
+    WebElement translationBtn;
+
+
+
 
 
     public SubscribeEngPage() {
@@ -85,6 +90,17 @@ public class SubscribeEngPage extends DriverManager {
     }
     public void selectBahrin(){
         BahrainBtn.click();
+    }
+    public void selectTranslateToAnotherLang(){
+        translationBtn.click();
+    }
+    public String getCurrentLang(){
+        String temp = translationBtn.getText();
+        if (temp.contains("English")){
+            return "Arabic";
+        }
+        else
+            return "English";
     }
 
 }

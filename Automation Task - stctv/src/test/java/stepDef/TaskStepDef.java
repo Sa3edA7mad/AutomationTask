@@ -65,4 +65,9 @@ public class TaskStepDef {
         subscribeKSAEngPage.clickOnCountriesArrow();
         subscribeKSAEngPage.selectBahrin();
     }
+
+    @When("switching to Arabic page")
+    public void switchingToArabicPage() {
+        subscribeKSAEngPage.selectTranslateToAnotherLang();
+    }
 }
